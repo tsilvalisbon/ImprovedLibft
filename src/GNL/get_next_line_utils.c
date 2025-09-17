@@ -6,7 +6,7 @@
 /*   By: tomandra <tomandra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/22 16:24:31 by tomandra          #+#    #+#             */
-/*   Updated: 2025/06/17 15:48:36 by tomandra         ###   ########.fr       */
+/*   Updated: 2025/09/17 11:31:21 by tomandra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*read_and_join_line(int fd, char *line, char *rest)
 		if (bytes <= 0)
 			break ;
 		rest[bytes] = '\0';
-		line = ft_strjoin(line, rest);	
+		line = ft_strjoin(line, rest);
 		if (!line)
 			return (NULL);
 	}

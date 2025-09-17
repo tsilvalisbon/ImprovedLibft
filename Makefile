@@ -6,7 +6,7 @@
 #    By: tomandra <tomandra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/08 16:03:36 by tomandra          #+#    #+#              #
-#    Updated: 2025/09/15 17:23:03 by tomandra         ###   ########.fr        #
+#    Updated: 2025/09/17 11:38:08 by tomandra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ FILE_DIR = $(SRC_DIR)file/
 MEMORY_DIR = $(SRC_DIR)memory/
 STRING_DIR = $(SRC_DIR)string/
 VERIFICATION_DIR = $(SRC_DIR)verification/
+LIST_DIR = $(SRC_DIR)list/
+PRINT_DIR = $(SRC_DIR)printf/
+GNL_DIR = $(SRC_DIR)GNL/
 
 CFLAGS = -Wall -Werror -Wextra -I $(INC_DIR)
 		
@@ -42,7 +45,15 @@ STRING = 		$(STRING_DIR)ft_atoi.c $(STRING_DIR)ft_itoa.c $(STRING_DIR)ft_split.c
 				$(STRING_DIR)ft_strnstr.c $(STRING_DIR)ft_strrchr.c $(STRING_DIR)ft_strtrim.c \
 				$(STRING_DIR)ft_substr.c $(STRING_DIR)ft_tolower.c $(STRING_DIR)ft_toupper.c
 				
-CFILES = $(VERIFICATION) $(MEMORY) $(STRING) $(FILE)
+LIST =			$(LIST_DIR)ft_lstadd_back.c $(LIST_DIR)ft_lstadd_front.c $(LIST_DIR)ft_lstclear.c \
+ 				$(LIST_DIR)ft_lstdelone.c $(LIST_DIR)ft_lstiter.c $(LIST_DIR)ft_lstmap.c \
+				$(LIST_DIR)ft_lstnew.c $(LIST_DIR)ft_lstsize.c
+
+PRINT =			$(PRINT_DIR)ft_printf.c $(PRINT_DIR)ft_printf_utils.c $(PRINT_DIR)ft_printf_utils_sec.c \
+
+GNL =			$(GNL_DIR)get_next_line.c $(GNL_DIR)get_next_line_utils.c
+
+CFILES = $(VERIFICATION) $(MEMORY) $(STRING) $(FILE) $(LIST) $(PRINT) $(GNL)
 
 OBJS = $(patsubst $(SRC_DIR)%.c, $(OBJS_DIR)/%.o, $(CFILES))
 
